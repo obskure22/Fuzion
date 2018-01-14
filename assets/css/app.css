@@ -53,6 +53,20 @@ table {
   border-spacing: 0;
 }
 
+html {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  color: #555;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
 #header {
   background: rgba(255, 255, 255, 0.9);
   left: 0;
@@ -61,8 +75,90 @@ table {
   top: 0;
 }
 
+#header #logo {
+  height: 40px;
+  width: 200px;
+  background: #86C847;
+  float: left;
+  margin-left: 50px;
+  transform: translateY(10px);
+}
+
+#header menu {
+  float: left;
+  font-size: 0;
+  margin-left: 50px;
+  position: relative;
+}
+
+#header menu li {
+  display: inline-block;
+  line-height: 1;
+  position: relative;
+}
+
+#header menu li li a {
+  font-size: 14px;
+}
+
+#header menu li li a::after {
+  display: none;
+}
+
+#header menu a {
+  color: #555;
+  display: block;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 20px 50px;
+  position: relative;
+}
+
+#header menu a::after {
+  content: "";
+  background: #86C847;
+  display: block;
+  position: absolute;
+  left: 50%;
+  height: 5px;
+  bottom: 10px;
+  right: 50%;
+  transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+}
+
+#header menu a:hover::after {
+  left: 50px;
+  right: 50px;
+}
+
+#header menu ul {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0 0 8px 8px;
+  left: 30px;
+  opacity: 0;
+  padding: 10px 20px;
+  position: absolute;
+  top: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#header menu ul li {
+  display: block;
+  margin: 0;
+  white-space: nowrap;
+}
+
+#header menu ul a {
+  line-height: 1;
+  padding: 10px 0;
+}
+
+#header menu > li:hover > ul {
+  opacity: 1;
+}
+
 .hero {
   background: #000080;
-  min-height: 200px;
+  min-height: 300px;
 }
 /*# sourceMappingURL=app.css.map */

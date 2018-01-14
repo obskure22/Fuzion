@@ -1,0 +1,15 @@
+@import "config";
+
+html {
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+}
+
+body {
+	color: $gray;
+	line-height: 1.5;
+}
+
+a {
+	text-decoration: none;
+}
