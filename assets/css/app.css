@@ -55,9 +55,14 @@ table {
 
 #header {
   background: rgba(255, 255, 255, 0.9);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 .hero {
   background: #000080;
+  min-height: 200px;
 }
 /*# sourceMappingURL=app.css.map */
