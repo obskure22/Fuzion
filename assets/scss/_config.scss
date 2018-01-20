@@ -13,11 +13,19 @@ $content-width: 1200px;
 
 $gutter-desktop: 50px;
 $gutter-tablet: 40px;
-$gutter-mobile: 30px;
+$gutter-mobile: 25px;
 
 $border-radius: 8px;
 $border-width: 3px;
 
 @mixin box-sizing($box-sizing...) {
 	box-sizing: $box-sizing;
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
