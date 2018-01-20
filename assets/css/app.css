@@ -218,7 +218,6 @@ p {
   box-sizing: border-box;
   background: url(../img/fpo/lights.jpg) center no-repeat;
   background-size: cover;
-  border: 3px solid #333433;
   border-radius: 8px;
   box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.1);
   display: block;
