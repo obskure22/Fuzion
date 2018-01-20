@@ -1,3 +1,23 @@
 $green: #86C847;
 $blue: #000080;
 $gray: #555;
+
+$light-gray: #949594;
+$medium-gray: #585958;
+$dark-gray: #333433;	
+
+$regular: 400;
+$semibold: 600;
+
+$content-width: 1200px;
+
+$gutter-desktop: 50px;
+$gutter-tablet: 40px;
+$gutter-mobile: 30px;
+
+$border-radius: 8px;
+$border-width: 3px;
+
+@mixin box-sizing($box-sizing...) {
+	box-sizing: $box-sizing;
+}

@@ -1,6 +1,96 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600');
 @import "../scss/_reset";
 @import "../scss/_base";
 
 @import "../scss/_header";
+@import "../scss/_footer";
 @import "../scss/_hero";
+@import "../scss/_promos";
+
+
+.basic-bar {
+	.logo {
+		margin-top: 40px;
+		width: 200px;
+	}
+
+	.wrap {
+		border-bottom: 4px solid $green;
+		margin: 0 auto;
+		max-width: 1000px;
+		padding: 0 40px;
+		padding-bottom: 25px;
+	}
+}
+
+.content {
+	margin: 25px auto 0 auto;
+	max-width: 1000px;
+	padding: 0 40px;
+
+	p {
+		font-size: 1.6em;
+		font-weight: 700;
+	}
+	p:first-child {
+		font-weight: 400;
+		margin-bottom: 40px;
+	}
+}
+
+.site-list {
+	margin-bottom: 40px;
+
+	li {
+		font-size: 1.6em;
+		list-style: circle inside;
+	}
+	li a {
+		color: $blue;
+		display: inline-block;
+		padding: 5px 0;
+		position: relative;
+	}
+	li a::after {
+		background: $blue;
+		bottom: 7px;
+		content: "";
+		display: block;
+		height: 3px;
+		left: 0;
+		position: absolute;
+		right: 0;
+		transition: background 0.3s ease-in-out;
+	}
+	li a:hover::after {
+		background: $green;
+	}
+}
+
+
+.footer {
+	background: #eee;
+	margin-top: 80px;
+	padding: 40px;
+
+	.wrap {
+		margin: 0 auto;
+		max-width: 1000px;
+	}
+	
+	p {
+		font-size: 1.6em;
+	}
+	p:first-child {
+		font-weight: 700;
+		padding-bottom: 1em;
+	}
+	a {
+		color: $blue;
+		text-decoration: underline;
+		transition: color 0.3s ease-in-out;
+	}
+	a:hover {
+		color: $green;
+	}
+}

@@ -1,6 +1,8 @@
 @import "config";
 
 .hero {
-	background: $blue;
+	background: url(../img/fpo/lights.jpg) center no-repeat;
+	background-size: cover;
+	height: 60vh;
 	min-height: 300px;
 }

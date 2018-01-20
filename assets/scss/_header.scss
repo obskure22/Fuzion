@@ -6,6 +6,7 @@
 	position: fixed;
 	right: 0;
 	top: 0;
+	z-index: 10;
 
 	#logo {
 		height: 40px;
@@ -38,7 +39,7 @@
 		a {
 			color: $gray;
 			display: block;
-			font-size: 18px;
+			font-size: 16px;
 			line-height: 20px;
 			padding: 20px 50px;
 			position: relative;
@@ -49,8 +50,8 @@
 			display: block;
 			position: absolute;
 			left: 50%;
-			height: 5px;
-			bottom: 10px;
+			height: $border-width;
+			bottom: 15px;
 			right: 50%;
 			transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
 		}
@@ -61,7 +62,7 @@
 
 		ul {
 			background: rgba(white, 0.9);
-			border-radius: 0 0 8px 8px;
+			border-radius: 0 0 $border-radius $border-radius;
 			left: 30px;
 			opacity: 0;
 			padding: 10px 20px;
