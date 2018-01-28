@@ -1,15 +1,15 @@
 @import "config";
 
 #footer {
-	background: rgba($light-gray, 0.25);
-	margin: 60px auto 0 auto;
+	background: rgba($light-gray, 0.1);
+	margin: 0 auto;
 	padding: 3em;
 
 	p {
 		font-size: 1.2em;
 	}
 	.wrap > p:first-child {
-		font-weight: $semibold;
+		font-weight: $bold;
 		line-height: 1;
 	}
 }

@@ -1,0 +1,109 @@
+@import "config";
+
+.main {
+	margin: 6em auto 8em;
+
+	&.alternate {
+		background: rgba($light-gray, 0.1);
+		margin-bottom: 4em;
+		padding-top: 5em;
+		padding-bottom: 6em;
+
+		ul li::before {
+			color: $blue;
+		}
+	}
+
+	.wrap {
+		max-width: 900px;
+	}
+	.col-2 {
+		column-count: 2;
+	}
+	.col-3 {
+		column-count: 3;
+	}
+
+
+	h2 {
+		color: $medium-gray;
+		font-size: 4.8em;
+		font-weight: $bold;
+		line-height: 1.3;
+	}
+
+	h3 {
+		color: $green;
+		font-size: 2.4em;
+		line-height: 1.3;
+		margin-top: 2.5em;
+	}
+
+	h4 {
+		color: $blue;
+		font-size: 1.9em;
+		font-weight: $bold;
+		margin-top: 1em;
+	}
+
+	p {
+		font-size: 1.6em;
+		font-weight: $light;
+
+		& + p {
+			margin-top: 1em;
+		}
+	}
+
+	ul {
+		@include clearfix;
+
+		li {
+			display: block;
+			font-size: 1.6em;
+			font-weight: $light;
+			padding-left: 20px;
+			position: relative;
+		}
+		li::before {
+			color: $green;
+			content: "\2022";
+			font-size: 30px;
+			left: 0;
+			line-height: 16px;
+			position: absolute;
+			top: 7px;
+		}
+		li + li {
+			margin-top: 0.25em;
+		}
+	}
+
+	h2 + h3 {
+		margin-top: 0.5em;
+	}
+	h2 + p {
+		margin-top: 1em;
+	}
+	h3 + p {
+		margin-top: 0.75em;
+	}
+	h4 + p,
+	h4 + ul {
+		margin-top: 0.5em;
+	}
+	ul + p {
+		margin-top: 1em;
+	}
+	p + ul {
+		margin-top: 1.6em;
+	}
+}
+
+.main + .main {
+	margin-top: 0;
+
+	h2 {
+		padding-top: 0.25em;
+	}
+}

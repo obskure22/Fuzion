@@ -6,8 +6,9 @@ $light-gray: #949594;
 $medium-gray: #585958;
 $dark-gray: #333433;	
 
+$light: 300;
 $regular: 400;
-$semibold: 600;
+$bold: 700;
 
 $content-width: 1200px;
 
@@ -16,7 +17,7 @@ $gutter-tablet: 40px;
 $gutter-mobile: 25px;
 
 $border-radius: 8px;
-$border-width: 3px;
+$border-width: 4px;
 
 @mixin box-sizing($box-sizing...) {
 	box-sizing: $box-sizing;

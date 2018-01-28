@@ -2,21 +2,20 @@
 
 .promos {
 	@include clearfix;
-	margin-top: 60px;
 
 	a {
 		@include box-sizing(border-box);
-		background: url(../img/fpo/lights.jpg) center no-repeat;
+		background: url(../img/hero/hero-3.jpg) center no-repeat;
 		background-size: cover;
-		//border: $border-width solid $dark-gray;;
-		border-radius: $border-radius;
+		//border: $border-width solid $dark-gray;
 		box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.1);
 		display: block;
 		float: left;
 		min-height: 300px;
-		overflow: hidden;
 		position: relative;
-		width: 32%;
+		transition: background 0.3s ease-in-out;
+		width: 33.333%;
+		z-index: 9;
 
 		&::before {
 			background: rgba($dark-gray, 0.9);
@@ -31,8 +30,8 @@
 			z-index: 1;
 		}
 	}
-	a + a {
-		margin-left: 2%;
+	a:nth-child(2n) {
+		background-image: url(../img/hero/hero-4.jpg);
 	}
 	.copy {
 		@include box-sizing(border-box);
@@ -46,7 +45,7 @@
 	.copy > *:first-child {
 		color: $green;
 		font-size: 2.8em;
-		font-weight: $semibold;
+		font-weight: $bold;
 		line-height: 1;
 	}
 	.copy > *:first-child ~ * {
@@ -68,8 +67,6 @@
 }
 @media only screen and (min-width: 550px) and (max-width: 900px) {
 	.promos {
-		margin-top: 40px;
-
 		a {
 			margin: 0;
 			min-height: 100px;
@@ -92,8 +89,6 @@
 
 @media only screen and (max-width: 549px) {
 	.promos {
-		margin-top: 30px;
-
 		a {
 			margin: 0;
 			min-height: 100px;

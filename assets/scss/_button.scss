@@ -1,0 +1,20 @@
+@import "config";
+
+.button {
+	@include box-sizing(border-box);
+	background: $dark-gray;
+	border: 2*$border-width solid transparent;
+	border-radius: 10em;
+	color: white;
+	display: inline-block;
+	font-size: 1.4em;
+	font-weight: $bold;
+	margin-top: 2em;
+	padding: 0.5em 3em;
+	text-transform: uppercase;
+	transition: border 0.3s ease-in-out;
+
+	&:hover {
+		border-color: $green;
+	}
+}

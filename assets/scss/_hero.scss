@@ -1,9 +1,9 @@
 @import "config";
 
 .hero {
-	background: url(../img/fpo/mountains.jpg) center no-repeat;
+	background: url(../img/hero/hero-1.jpg) center 70% no-repeat;
 	background-size: cover;
-	border-bottom: (2*$border-width) solid $dark-gray;
-	height: 60vh;
+	border-bottom: (2.5*$border-width) solid $green;
+	height: 80vh;
 	min-height: 500px;
 }

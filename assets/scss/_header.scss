@@ -2,25 +2,47 @@
 
 #header {
 	background: rgba(white, 0.9);
+	
 	left: 0;
 	position: fixed;
 	right: 0;
-	top: 0;
+	top: 50px;
 	z-index: 10;
 
+	&.hero-border {
+		border-bottom: $border-width/2 solid $green;
+	}
+	&.past-hero::before {
+		background: rgba(white, 0.9);
+		content: "";
+		height: 50px;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: -50px;
+	}
+
 	#logo {
-		height: 40px;
-		width: 200px;
-		background: $green;
+		border-radius: $border-radius;
+		padding: 2em 3em;
+		background: white;
+		width: 120px;
 		float: left;
-		margin-left: 50px;
-		transform: translateY(10px);
+		position: absolute;
+		top: 50%;
+		left: 60px;
+		transform: translateY(-50%);
+		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+		
+		img {
+			width: 100%;
+		}
 	}
 
 	menu {
 		float: left;
 		font-size: 0;
-		margin-left: 50px;
+		margin-left: 260px;
 		position: relative;
 
 		li {
@@ -39,10 +61,12 @@
 		a {
 			color: $gray;
 			display: block;
-			font-size: 16px;
+			font-size: 14px;
+			font-weight: $bold;
 			line-height: 20px;
-			padding: 20px 50px;
+			padding: 20px 30px;
 			position: relative;
+			text-transform: uppercase;
 		}
 		a::after {
 			content: "";
@@ -56,11 +80,14 @@
 			transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
 		}
 		a:hover::after {
-			left: 50px;
-			right: 50px;
+			left: 30px;
+			right: 30px;
 		}
 
 		ul {
+			display: none;
+		}
+		/*ul {
 			background: rgba(white, 0.9);
 			border-radius: 0 0 $border-radius $border-radius;
 			left: 30px;
@@ -85,6 +112,6 @@
 			& > ul {
 				opacity: 1;
 			}
-		}
+		}*/
 	}
 }
