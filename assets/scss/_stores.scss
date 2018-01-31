@@ -1,0 +1,44 @@
+@import "config";
+
+.main .stores {
+	@include clearfix;
+	margin-top: 20px;
+	
+	li {
+		background: white no-repeat center 20px;
+		background-image: url(../img/stores/philly-2018.png);
+		background-size: 33% auto;
+		box-sizing: border-box;
+		float: left;
+		margin-left: 2%;
+		padding-left: 0;
+		text-align: center;
+		width: 32%;
+
+		&::before {
+			display: none;
+		}
+	}
+	li + li {
+		margin-top: 0;
+	}
+	li:nth-child(n+4) {
+		margin-top: 2%;
+	}
+	li:nth-child(3n+1) {
+		margin-left: 0;
+	}
+	a {
+		border: $border-width solid $dark-gray;
+		border-radius: $border-radius;
+		color: $dark-gray;
+		display: block;
+		font-weight: $bold;
+		padding: 110px 20px 20px 20px;
+		transition: border 0.3s ease-in-out;
+
+		&:hover {
+			border-color: $green;
+		}
+	}
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>Fuzion Sports</title>
+		<link href="assets/css/app.css" rel="stylesheet" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	</head>
+  	<body>
+
+		<header id="header">
+			<a href="#" class="hamburglar">
+				<span></span><span></span><span></span>
+			</div>
+			<div id="logo"><a href="https://www.fuzion-sports.com/"><img src="assets/img/logo-fuzion.png" alt="Fuzion Sports" /></a></div>
+			<menu>
+				<li><a href="#whatwedo">What we do</a>
+					<ul>
+						<li><a href="#">For Racquet Pros</a></li>
+						<li><a href="#">For Racquet Pros</a></li>
+					</ul>
+				</li>
+				<li><a href="#whoweare">Who we are</a>
+					<ul>
+						<li><a href="#">The Fuzion Story</a></li>
+						<li><a href="#">Our Team</a></li>
+					</ul>
+				</li>
+				<li><a href="#contactus">Contact us</a>
+					<ul>
+						<li><a href="#">Contact Form 1</a></li>
+						<li><a href="#">Contact Form 2</a></li>
+					</ul>
+				</li>
+				<li class="mobile-enabled"><a href="shop.html">Shop</a></li>
+			</menu>
+
+			<div id="overlay"></div>
+		</header>
+
+		<div id="iframebox" style="background:#dfd;height:70vh;"></div>
+				
+		<div class="main">
+			<div class="wrap">
+				<h2>Events</h2>
+				<ul class="stores">
+					<li><a href="https://phillyopen.itemorder.com/">Philly Open 2018</a></li>
+				</ul>
+
+				<h2>Organizations</h2>
+				<ul class="stores">
+					<li><a href="https://shyft.itemorder.com/">Shyft</a></li>
+					<li><a href="https://three-rivers.itemorder.com/">Three Rivers</a></li>
+				</ul>
+
+				<h2>Clubs</h2>
+				<ul class="stores">
+					<li><a href="https://skokiecountryclub.itemorder.com/">Skokie Country Club</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<footer id="footer">
+			<div class="wrap">
+				<p>Copyright 2017 - 2018. Fuzion Sports, LLC. All Rights Reserved.</p>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery-3.3.1.min.js"></script>
+		<script>
+			$(function() {
+				$("#overlay").on("click", function() {
+					SetOverlay("remove");
+				});
+				$("#header .hamburglar").on("click", function (e) {
+					e.preventDefault();
+					$("body").attr("overlay-state", "hamburglar");
+				});
+
+				$('a[href*="#"]').on('click', function (e) {
+					$('html, body').animate({
+						scrollTop: $($(this).attr('href')).offset().top - 150
+					}, 300, 'linear');
+					SetOverlay("scrolling");
+				});
+
+				$(window).on("scroll", function() {
+					var scrollpos = $(window).scrollTop();
+					var heroheight = $("#iframebox").outerHeight();
+
+					if(scrollpos >= heroheight) {
+						$("#header").addClass("past-hero");
+					} else {
+						$("#header").removeClass("past-hero");
+					}
+
+					if(scrollpos >= heroheight - 110) {
+						$("#header").addClass("hero-border");
+					} else {
+						$("#header").removeClass("hero-border");
+					}
+				});
+
+				function SetOverlay(status) {
+					if(status == "remove") {
+						$("body").removeAttr("overlay-state");
+					}
+				}
+			});
+		</script>
+  	</body>
+</html>

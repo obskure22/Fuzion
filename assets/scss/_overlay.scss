@@ -2,6 +2,7 @@
 
 @mixin overlay-on {
 	opacity: 1;
+	pointer-events: auto;
 	z-index: 9;
 }
 
@@ -11,6 +12,7 @@
 	display: block;
 	left: 0;
 	opacity: 0;
+	pointer-events: none;
 	position: fixed;
 	top: 0;
 	right: 0;
