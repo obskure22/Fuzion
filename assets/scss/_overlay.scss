@@ -26,10 +26,20 @@ body {
 
 		#header menu {
 			box-shadow: 0 0 20px 10px rgba(black, 0.5);
+			opacity: 1;
 			transform: translateX(0);
+			transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 		}
 		#overlay {
 			@include overlay-on;
+		}
+	}
+
+	&[overlay-state="scrolling"] {
+		#header menu {
+			box-shadow: 0 0 20px 10px rgba(black, 0.5);
+			opacity: 0;
+			transform: translateX(0);
 		}
 	}
 }

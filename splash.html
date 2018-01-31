@@ -16,8 +16,8 @@
 			<menu>
 				<li><a href="#whatwedo">What we do</a>
 					<ul>
-						<li><a href="#">For Racquet Pros</a></li>
-						<li><a href="#">For Racquet Pros</a></li>
+						<li><a href="#racquetpros">For Racquet Pros</a></li>
+						<li><a href="#spiritwear">For School, Team, Corporate spirit wear managers</a></li>
 					</ul>
 				</li>
 				<li><a href="#whoweare">Who we are</a>
@@ -68,7 +68,7 @@
 		<div class="main">
 			<div class="wrap">
 				<h2 id="whatwedo">What we do</h2>
-				<h3>For Racquet Pros</h3>
+				<h3 id="racquetpros">For Racquet Pros</h3>
 				<p>You're a racquet sports professional&mdash;not a merchandiser, not a professional clothing buyer, not a logistics and supply chain expert. Running a Pro Shop can be cumbersome and risky, especially when your time is better spent on the court.</p>
 
 				<h4>The Solution</h4>
@@ -86,7 +86,7 @@
 
 				<a href="#" class="button">Contact Button</a>
 
-				<h3>For School, Team, Corporate spirit wear managers</h3>
+				<h3 id="spiritwear">For School, Team, Corporate spirit wear managers</h3>
 				<p>Managing your school, team or company's spirit wear program can be time consuming and inefficient. THis likely isn't your full-time job, and you can think of better ways to spend your time than picking items from catalogs and chasing people down for sizes and collecting money.</p>
 				
 				<h4>The Solution</h4>
@@ -177,6 +177,17 @@
 				function SetOverlay(status) {
 					if(status == "remove") {
 						$("body").removeAttr("overlay-state");
+						return;
+					} else {
+						$("body").attr("overlay-state", status);
+					}
+
+					switch(status) {
+						case "scrolling":
+							setTimeout(function() {
+								$("body").removeAttr("overlay-state");
+							}, 300);
+							break;
 					}
 				}
 			});
