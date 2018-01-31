@@ -11,7 +11,7 @@
 		box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.1);
 		display: block;
 		float: left;
-		min-height: 300px;
+		min-height: 20vw;
 		position: relative;
 		transition: background 0.3s ease-in-out;
 		width: 33.333%;
@@ -96,7 +96,7 @@
 			width: 100%;
 		}
 		a + a {
-			margin: 20px 0 0 0;
+			margin: 0;
 		}
 		.copy > *:first-child {
 			font-size: 2em;

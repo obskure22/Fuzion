@@ -113,21 +113,8 @@ p {
   top: -50px;
 }
 
-#header #logo {
-  border-radius: 8px;
-  padding: 2em 3em;
-  background: white;
-  width: 120px;
-  float: left;
-  position: absolute;
-  top: 50%;
-  left: 60px;
-  transform: translateY(-50%);
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
-}
-
-#header #logo img {
-  width: 100%;
+#header .hamburglar {
+  display: none;
 }
 
 #header menu {
@@ -135,46 +122,16 @@ p {
   font-size: 0;
   margin-left: 260px;
   position: relative;
-  /*ul {
-			background: rgba(white, 0.9);
-			border-radius: 0 0 $border-radius $border-radius;
-			left: 30px;
-			opacity: 0;
-			padding: 10px 20px;
-			position: absolute;
-			top: 100%;
-			transition: opacity 0.3s ease-in-out;
+}
 
-			li {
-				display: block;
-				margin: 0;
-				white-space: nowrap;
-			}
-			a {
-				line-height: 1;
-				padding: 10px 0;
-			}
-		}
-
-		& > li:hover {
-			& > ul {
-				opacity: 1;
-			}
-		}*/
+#header menu ul {
+  display: none;
 }
 
 #header menu li {
   display: inline-block;
   line-height: 1;
   position: relative;
-}
-
-#header menu li li a {
-  font-size: 14px;
-}
-
-#header menu li li a::after {
-  display: none;
 }
 
 #header menu a {
@@ -205,8 +162,120 @@ p {
   right: 30px;
 }
 
-#header menu ul {
-  display: none;
+#logo {
+  border-radius: 8px;
+  padding: 2em 3em;
+  background: white;
+  width: 120px;
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+#logo img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  #logo {
+    left: 50%;
+    padding: 1.5em 2em;
+    transform: translate(-50%, -50%);
+    width: 90px;
+  }
+  #header {
+    height: 45px;
+    top: 40px;
+  }
+  #header .hamburglar {
+    background: rgba(51, 52, 51, 0);
+    display: block;
+    left: 0;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    transition: background 0.3s ease-in-out;
+  }
+  #header .hamburglar span {
+    background: #585958;
+    display: block;
+    height: 3px;
+    width: 20px;
+  }
+  #header .hamburglar span + span {
+    margin-top: 3px;
+  }
+  #header .hamburglar:hover {
+    background: rgba(88, 89, 88, 0.25);
+  }
+  #header .hamburglar:active {
+    background: none !important;
+  }
+  #header menu {
+    background: white url(../img/logo-fuzion.png) no-repeat;
+    background-position: 30px 30px;
+    background-size: 100px auto;
+    bottom: 0;
+    box-shadow: 0 0 20px 10px transparent;
+    left: 0;
+    margin: 0;
+    max-width: 300px;
+    padding-top: 135px;
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    width: 75vw;
+    z-index: 10;
+  }
+  #header menu::before {
+    background: #86C847;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 115px;
+  }
+  #header menu::after {
+    background: rgba(148, 149, 148, 0.1);
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 115px;
+  }
+  #header menu ul {
+    display: block;
+  }
+  #header menu li {
+    display: block;
+    position: relative;
+    text-align: left;
+    z-index: 2;
+  }
+  #header menu li li a {
+    font-weight: 400;
+    padding-left: 50px;
+  }
+  #header menu > li + li {
+    margin-top: 20px;
+  }
+  #header menu a {
+    padding: 8px 30px;
+    text-transform: none;
+  }
+  #header menu a::after {
+    display: none;
+  }
+  #header menu a:hover {
+    color: #000080;
+  }
 }
 
 #footer {
@@ -342,6 +411,33 @@ p {
   padding-top: 0.25em;
 }
 
+#overlay {
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  display: block;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: opacity 0.3s ease-in-out, z-index 0.3s ease-in-out;
+  z-index: -1;
+}
+
+body[overlay-state="hamburglar"] {
+  overflow: hidden;
+}
+
+body[overlay-state="hamburglar"] #header menu {
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+}
+
+body[overlay-state="hamburglar"] #overlay {
+  opacity: 1;
+  z-index: 9;
+}
+
 .button {
   box-sizing: border-box;
   background: #333433;
@@ -382,7 +478,7 @@ p {
   box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.1);
   display: block;
   float: left;
-  min-height: 300px;
+  min-height: 20vw;
   position: relative;
   transition: background 0.3s ease-in-out;
   width: 33.333%;
@@ -464,7 +560,7 @@ p {
     width: 100%;
   }
   .promos a + a {
-    margin: 20px 0 0 0;
+    margin: 0;
   }
   .promos .copy > *:first-child {
     font-size: 2em;

@@ -2,7 +2,6 @@
 
 #header {
 	background: rgba(white, 0.9);
-	
 	left: 0;
 	position: fixed;
 	right: 0;
@@ -22,41 +21,22 @@
 		top: -50px;
 	}
 
-	#logo {
-		border-radius: $border-radius;
-		padding: 2em 3em;
-		background: white;
-		width: 120px;
-		float: left;
-		position: absolute;
-		top: 50%;
-		left: 60px;
-		transform: translateY(-50%);
-		box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
-		
-		img {
-			width: 100%;
-		}
+	.hamburglar {
+		display: none;
 	}
-
 	menu {
 		float: left;
 		font-size: 0;
 		margin-left: 260px;
 		position: relative;
 
+		ul {
+			display: none;
+		}
 		li {
 			display: inline-block;
 			line-height: 1;
 			position: relative;
-		}
-		li li {
-			a {
-				font-size: 14px;
-			}
-			a::after {
-				display: none;
-			}
 		}
 		a {
 			color: $gray;
@@ -83,35 +63,127 @@
 			left: 30px;
 			right: 30px;
 		}
+	}
+}
 
-		ul {
-			display: none;
-		}
-		/*ul {
-			background: rgba(white, 0.9);
-			border-radius: 0 0 $border-radius $border-radius;
-			left: 30px;
-			opacity: 0;
-			padding: 10px 20px;
+#logo {
+	border-radius: $border-radius;
+	padding: 2em 3em;
+	background: white;
+	width: 120px;
+	position: absolute;
+	top: 50%;
+	left: 60px;
+	transform: translateY(-50%);
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
+	
+	img {
+		width: 100%;
+	}
+}
+
+
+@media only screen and (max-width: 1000px) {
+	#logo {
+		left: 50%;
+		padding: 1.5em 2em;
+		transform: translate(-50%, -50%);
+		width: 90px;
+	}
+
+	#header {
+		height: 45px;
+		top: 40px;
+
+		.hamburglar {
+			background: rgba($dark-gray, 0);
+			display: block;
+			left: 0;
+			padding: 15px;
 			position: absolute;
-			top: 100%;
-			transition: opacity 0.3s ease-in-out;
+			top: 0;
+			transition: background 0.3s ease-in-out;
 
+			span {
+				background: $medium-gray;
+				display: block;
+				height: 3px;
+				width: 20px;
+			}
+			span + span {
+				margin-top: 3px;
+			}
+
+			&:hover {
+				background: rgba($medium-gray, 0.25);
+			}
+			&:active {
+				background: none !important;
+			}
+		}
+		menu {
+			background: white url(../img/logo-fuzion.png) no-repeat;
+			background-position: 30px 30px;
+			background-size: 100px auto;
+			bottom: 0;
+			box-shadow: 0 0 20px 10px rgba(black, 0);
+			left: 0;
+			margin: 0;
+			max-width: 300px;
+			padding-top: 135px;
+			position: fixed;
+			top: 0;
+			transform: translateX(-100%);
+			transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+			width: 75vw;
+			z-index: 10;
+			
+			&::before {
+				background: $green;
+				content: "";
+				display: block;
+				height: $border-width;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 115px;
+			}
+			&::after {
+				background: rgba($light-gray, 0.1);
+				bottom: 0;
+				content: "";
+				display: block;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 115px;
+			}
+			ul {
+				display: block;
+			}
 			li {
 				display: block;
-				margin: 0;
-				white-space: nowrap;
+				position: relative;
+				text-align: left;
+				z-index: 2;
+			}
+			li li a {
+				font-weight: $regular;
+				padding-left: 50px;
+			}
+			& > li + li {
+				margin-top: 20px;
 			}
 			a {
-				line-height: 1;
-				padding: 10px 0;
+				padding: 8px 30px;
+				text-transform: none;
+			}
+			a::after {
+				display: none;
+			}
+			a:hover {
+				color: $blue;
 			}
 		}
-
-		& > li:hover {
-			& > ul {
-				opacity: 1;
-			}
-		}*/
 	}
 }
